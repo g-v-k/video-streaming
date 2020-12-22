@@ -10,7 +10,7 @@ app.get('/',function(req,res,next){
 
 app.get('/video',function(req, res,next){
     const range = req.headers.range;
-    if(!range) res.status(400).send("Range header requires");
+    if(!range) return res.status(400).send("Range header requires");
     const filePath = path.join("Your video file path");
     const fileSize = fs.statSync(filePath).size;
     
