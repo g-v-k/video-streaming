@@ -11,10 +11,10 @@ app.get('/',function(req,res,next){
 app.get('/video',function(req, res,next){
     const range = req.headers.range;
     if(!range) res.status(400).send("Range header requires");
-    const filePath = path.join(__dirname,'..','Ethnic-song.mp4');
+    const filePath = path.join("Your video file path");
     const fileSize = fs.statSync(filePath).size;
     
-    const chunkSize = (10**6)*10;
+    const chunkSize = (10**6)*10; //size of the chuncks of the video that we will send eveytime a request comes
     const start = Number(range?.replace(/\D+/g,''));
     const end = Math.min(start+chunkSize,fileSize-1);
     const contentLength = end-start+1;
