@@ -1,4 +1,4 @@
-This is an example illustrating video streaming like Youtube in Nodejs.
+This is an example illustrating video streaming in Nodejs.
 
 "node run build" for building the project as this is a typescript project. 
 "node start" for starting the server.
